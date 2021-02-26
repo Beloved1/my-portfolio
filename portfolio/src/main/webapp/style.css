@@ -1,7 +1,64 @@
+*{
+  font-family: Cursive, Montserrat, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 #content {
   margin-left: auto;
   margin-right: auto;
-  width: 650px;
+  width: 750px;
+}
+
+#content .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+
+.header h2{
+  background-color: black;
+  border-radius: 50%;
+  padding: 30px;
+}
+
+.summary h3{
+  color: white;
+  background-color: rgb(1, 1, 31);
+  text-align: center;
+  width: 150px;
+  padding: 10px;
+}
+
+.projects h3{
+  color: white;
+  background-color: rgb(34, 143, 6);
+  text-align: center;
+  width: 200px;
+  padding: 10px;
+}
+
+.langs h3{
+  color: white;
+  background-color: rgb(212, 43, 31);
+  text-align: center;
+  width: 250px;
+  padding: 10px;
+}
+
+.interests h3{
+  color: white;
+  background-color: rgb(200, 221, 9);
+  text-align: center;
+  width: 150px;
+  padding: 10px;
+}
+
+.anime p{
+  color: white;
+  background-color: rgb(63, 4, 63);
+  text-align: center;
+  width: 400px;
+  padding: 10px;
 }
 
 #greeting-container {
