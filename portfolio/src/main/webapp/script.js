@@ -27,10 +27,51 @@ function addRandomFact() {
   factContainer.innerText = fact;
 }
 
-async function showString() {
-  const responseFromServer = await fetch('/welcome');
-  const textFromResponse = await responseFromServer.text();
+async function getQuotes() {
+    const responseFromServer = await fetch('/welcome');
+    const quote = await responseFromServer.json();
 
-  const welcomeContainer = document.getElementById('welcome-container');
-  welcomeContainer.innerText = textFromResponse;
+    const welcomeItems = document.getElementById('welcome-container');
+    welcomeItems.innerHTML = '';
+
+
+    data = []
+    data.append(quote.quotes)
+    data = json.dumps(data)
+
+
+    welcomeItems.appendChild(
+      createListElement(quote.quotes));
+    // welcomeItems.appendChild(
+    //   createListElement(quote.quotes[1]));
+    // welcomeItems.appendChild(
+    //   createListElement(quote.quotes[2]));
+    // welcomeItems.appendChild(
+    //   createListElement(quote.quotes[3]));
+
+
+}
+
+
+// async function getQuotes() {
+//   const responseFromServer = await fetch('/welcome');
+//   const stats = await responseFromServer.json();
+
+//   const statsListElement = document.getElementById('welcome-container');
+//   statsListElement.innerHTML = '';
+
+//   statsListElement.appendChild(
+//       createListElement(quo));
+//   statsListElement.appendChild(
+//       createListElement('Current time: ' + stats.currentTime));
+//   statsListElement.appendChild(
+//       createListElement('Max memory: ' + stats.maxMemory));
+//   statsListElement.appendChild(
+//       createListElement('Used memory: ' + stats.usedMemory));
+// }
+
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
 }
