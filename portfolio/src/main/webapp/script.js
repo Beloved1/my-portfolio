@@ -27,22 +27,27 @@ function addRandomFact() {
   factContainer.innerText = fact;
 }
 
+
 async function getQuotes() {
     const responseFromServer = await fetch('/welcome');
     const quote = await responseFromServer.json();
 
+    
+
+    const word = quote[Math.floor(Math.random() * quote.length)];
+
     const welcomeItems = document.getElementById('welcome-container');
-    welcomeItems.innerHTML = '';
+    welcomeItems.innerHTML = word;
 
 
-    welcomeItems.appendChild(
-      createListElement(quote[0]));
-    welcomeItems.appendChild(
-       createListElement(quote[1]));
-    welcomeItems.appendChild(
-      createListElement(quote[2]));
-    welcomeItems.appendChild(
-      createListElement(quote[3]));
+    // welcomeItems.appendChild(
+    //   createListElement(quote[0]));
+    // welcomeItems.appendChild(
+    //    createListElement(quote[1]));
+    // welcomeItems.appendChild(
+    //   createListElement(quote[2]));
+    // welcomeItems.appendChild(
+    //   createListElement(quote[3]));
 
 
 }
