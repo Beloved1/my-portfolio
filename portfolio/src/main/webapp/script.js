@@ -37,7 +37,7 @@ async function getQuotes() {
     const word = quote[Math.floor(Math.random() * quote.length)];
 
     const welcomeItems = document.getElementById('welcome-container');
-    welcomeItems.innerHTML = word;
+    welcomeItems.innerText = word;
 
 
     // welcomeItems.appendChild(
