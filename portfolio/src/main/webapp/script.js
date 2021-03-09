@@ -39,17 +39,6 @@ async function getQuotes() {
     const welcomeItems = document.getElementById('welcome-container');
     welcomeItems.innerText = word;
 
-
-    // welcomeItems.appendChild(
-    //   createListElement(quote[0]));
-    // welcomeItems.appendChild(
-    //    createListElement(quote[1]));
-    // welcomeItems.appendChild(
-    //   createListElement(quote[2]));
-    // welcomeItems.appendChild(
-    //   createListElement(quote[3]));
-
-
 }
 
 function createListElement(text) {
