@@ -30,8 +30,7 @@ public class NewServlet extends HttpServlet {
     }
     
 
-    private String convertToJsonUsingGson(ArrayList<String> quotes)
-    {
+    private String convertToJsonUsingGson(ArrayList<String> quotes){
         Gson gson = new Gson();
         String json = gson.toJson(quotes);
         return json;
