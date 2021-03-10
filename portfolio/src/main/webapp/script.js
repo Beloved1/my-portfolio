@@ -26,3 +26,23 @@ function addRandomFact() {
   const factContainer = document.getElementById('fact-container');
   factContainer.innerText = fact;
 }
+
+
+async function getQuotes() {
+    const responseFromServer = await fetch('/welcome');
+    const quote = await responseFromServer.json();
+
+    
+
+    const word = quote[Math.floor(Math.random() * quote.length)];
+
+    const welcomeItems = document.getElementById('welcome-container');
+    welcomeItems.innerText = word;
+
+}
+
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
