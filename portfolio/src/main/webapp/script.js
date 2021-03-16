@@ -46,3 +46,36 @@ function createListElement(text) {
   liElement.innerText = text;
   return liElement;
 }
+
+
+
+function translate() {
+        const facts =
+            ['I love to play soccer!', 'Gaming is fun!', 'I love anime also!', 'Coding is life!'];
+
+        const fact = facts[Math.floor(Math.random() * facts.length)];
+
+
+        const languageCode = 'ja';
+
+
+        const text = fact;
+
+        const resultContainer = document.getElementById('result');
+        resultContainer.innerText = 'Translating...';
+
+        const wordContainer = document.getElementById('word');
+
+        const params = new URLSearchParams();
+        params.append('text', text);
+        params.append('languageCode', languageCode);
+
+        fetch('/translate', {
+          method: 'POST',
+          body: params
+        }).then(response => response.text())
+        .then((translatedMessage) => {
+          resultContainer.innerText = translatedMessage;
+          wordContainer.innerText = text;
+        });
+      }
