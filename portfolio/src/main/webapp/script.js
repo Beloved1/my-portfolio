@@ -50,7 +50,6 @@ function createListElement(text) {
 
 
 function translate() {
-        //const text = document.getElementById('text').value;
         const facts =
             ['I love to play soccer!', 'Gaming is fun!', 'I love anime also!', 'Coding is life!'];
 
